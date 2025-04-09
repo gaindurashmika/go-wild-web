@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yala National Park - GoWild.lk</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            background-color: #f9f9f9;
+        }
+        
+        nav {
+            background-color: #026b42;
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        nav ul li {
+            margin: 0 15px;
+        }
+        
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1.1rem;
+            transition: 0.3s;
+        }
+        
+        nav ul li a:hover {
+            color: #ff9900;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        
+        .destination-header {
+            height: 500px;
+            background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('images/yala.jpg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+        }
+        
+        .header-content {
+            z-index: 1;
+            max-width: 800px;
+            padding: 0 20px;
+        }
+        
+        .destination-header h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+        }
+        
+        .destination-header p {
+            font-size: 1.3rem;
+            margin-bottom: 30px;
+        }
+        
+        .destination-info {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 40px;
+            margin-top: 50px;
+        }
+        
+        .main-content {
+            line-height: 1.8;
+        }
+        
+        .main-content h2 {
+            color: #026b42;
+            margin-top: 40px;
+            margin-bottom: 20px;
+        }
+        
+        .main-content p {
+            margin-bottom: 20px;
+        }
+        
+        .sidebar {
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            height: fit-content;
+        }
+        
+        .info-box {
+            margin-bottom: 30px;
+        }
+        
+        .info-box h3 {
+            color: #026b42;
+            margin-top: 0;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .info-item {
+            margin-bottom: 15px;
+        }
+        
+        .info-item strong {
+            display: block;
+            margin-bottom: 5px;
+            color: #555;
+        }
+        
+        .wildlife-list {
+            padding-left: 20px;
+            margin-bottom: 0;
+        }
+        
+        .gallery {
+            margin-top: 60px;
+        }
+        
+        .gallery h2 {
+            color: #026b42;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+        }
+        
+        .gallery-image {
+            height: 200px;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        .gallery-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s;
+        }
+        
+        .gallery-image:hover img {
+            transform: scale(1.1);
+        }
+        
+        .safari-options {
+            margin-top: 60px;
+        }
+        
+        .safari-options h2 {
+            color: #026b42;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .safari-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+        }
+        
+        .safari-card {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .safari-content {
+            padding: 25px;
+        }
+        
+        .safari-content h3 {
+            margin-top: 0;
+            color: #026b42;
+        }
+        
+        .price {
+            font-weight: bold;
+            font-size: 1.2rem;
+            color: #ff9900;
+            margin: 15px 0;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: #ff9900;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: background-color 0.3s;
+        }
+        
+        .btn:hover {
+            background-color: #e68a00;
+        }
+        
+        .back-link {
+            display: inline-block;
+            margin-top: 60px;
+            color: #026b42;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        
+        .back-link:hover {
+            text-decoration: underline;
+        }
+        
+        footer {
+            background-color: #222;
+            color: white;
+            padding: 60px 0 20px;
+            text-align: center;
+            margin-top: 80px;
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .copyright {
+            padding-top: 20px;
+            color: #888;
+        }
+        
+        @media (max-width: 768px) {
+            .destination-header h1 {
+                font-size: 2.5rem;
+            }
+            
+            .destination-info {
+                grid-template-columns: 1fr;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            nav ul li {
+                margin: 5px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="gowild.lk.html#destinations">Destinations</a></li>
+            <li><a href="gowild.lk.html#activities">Activities</a></li>
+            <li><a href="gowild.lk.html">Wildlife</a></li>
+            <li><a href="gowild.lk.html">Tour Packages</a></li>
+            <li><a href="gowild.lk.html">Travel Planning</a></li>
+        </ul>
+    </nav>
+
+    <div class="destination-header">
+        <div class="header-content">
+            <h1>Yala National Park</h1>
+            <p>Discover the wild heart of Sri Lanka - Where leopards roam and nature speaks its ancient language</p>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="destination-info">
+            <div class="main-content">
+                <h2>About Yala National Park</h2>
+                <p>Yala National Park, located in the southeastern region of Sri Lanka, is a biodiversity hotspot and one of the most famous wildlife sanctuaries in the world. Spanning nearly 1,000 square kilometers, the park is a mosaic of diverse ecosystems including tropical forests, grasslands, and coastal areas.</p>
+                
+                <p>Known for having the highest density of leopards in the world, Yala offers an unparalleled wildlife viewing experience. The park is divided into five blocks, with Block 1 being the most popular and accessible to tourists.</p>
+                
+                <h2>Wildlife and Biodiversity</h2>
+                <p>Yala is home to an incredible array of wildlife, making it a paradise for nature enthusiasts and wildlife photographers. Some of the notable species you can encounter include:</p>
+                <ul class="wildlife-list">
+                    <li>Sri Lankan Leopard (Panthera pardus kotiya)</li>
+                    <li>Asian Elephant</li>
+                    <li>Sloth Bear</li>
+                    <li>Crocodiles</li>
+                    <li>Various species of deer</li>
+                    <li>Numerous bird species including peacocks, painted storks, and many migratory birds</li>
+                </ul>
+                
+                <h2>Safari Experience</h2>
+                <p>Visitors can explore the park through guided jeep safaris, which offer the best opportunities to observe wildlife in their natural habitat. Early morning and late afternoon safaris provide the most rewarding wildlife viewing experiences.</p>
+            </div>
+            
+            <div class="sidebar">
+                <div class="info-box">
+                    <h3>Park Details</h3>
+                    <div class="info-item">
+                        <strong>Location:</strong>
+                        Southeastern Sri Lanka, near Tissamaharama
+                    </div>
+                    <div class="info-item">
+                        <strong>Best Time to Visit:</strong>
+                        February to July
+                    </div>
+                    <div class="info-item">
+                        <strong>Nearest Town:</strong>
+                        Kataragama
+                    </div>
+                    <div class="info-item">
+                        <strong>Park Area:</strong>
+                        979 square kilometers
+                    </div>
+                </div>
+                
+                <div class="info-box">
+                    <h3>Quick Tips</h3>
+                    <div class="info-item">
+                        <strong>What to Bring:</strong>
+                        Camera, binoculars, hat, sunscreen, water
+                    </div>
+                    <div class="info-item">
+                        <strong>Recommended Clothing:</strong>
+                        Light, neutral-colored clothing
+                    </div>
+                    <div class="info-item">
+                        <strong>Photography:</strong>
+                        Recommended, but follow safari guidelines
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="gallery">
+            <h2>Yala Photo Gallery</h2>
+            <div class="gallery-grid">
+                <div class="gallery-image">
+                    <img src="images/leopard.jpg" alt="Leopard in Yala">
+                </div>
+                <div class="gallery-image">
+                    <img src="images/elephant.jpg" alt="Elephant in Yala">
+                </div>
+                <div class="gallery-image">
+                    <img src="images/landscape.jpg" alt="Yala Landscape">
+                </div>
+                <div class="gallery-image">
+                    <img src="images/peacock.jpg" alt="Peacock in Yala">
+                </div>
+            </div>
+        </div>
+
+        <div class="safari-options">
+            <h2>Safari Package Options</h2>
+            <div class="safari-grid">
+                <div class="safari-card">
+                    <div class="safari-content">
+                        <h3>Half-Day Safari</h3>
+                        <p>A morning or afternoon safari exploring the best wildlife spots in Yala National Park.</p>
+                        <div class="price">From $80 per person</div>
+                        <a href="#" class="btn">Book Now</a>
+                    </div>
+                </div>
+                <div class="safari-card">
+                    <div class="safari-content">
+                        <h3>Full-Day Safari</h3>
+                        <p>Comprehensive safari experience covering multiple zones of the park with packed lunch.</p>
+                        <div class="price">From $150 per person</div>
+                        <a href="#" class="btn">Book Now</a>
+                    </div>
+                </div>
+                <div class="safari-card">
+                    <div class="safari-content">
+                        <h3>Private Photographic Safari</h3>
+                        <p>Specialized safari for wildlife photographers with expert guides.</p>
+                        <div class="price">From $250 per person</div>
+                        <a href="#" class="btn">Book Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <a href="gowild.lk.html" class="back-link">← Back to All Destinations</a>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <p>© 2024 GoWild.lk - Your Ultimate Wildlife & Nature Travel Companion</p>
+            <p>Experience the Wild, Preserve the Nature</p>
+            <div class="copyright">
+                All Rights Reserved | Designed with ❤️ in Sri Lanka
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

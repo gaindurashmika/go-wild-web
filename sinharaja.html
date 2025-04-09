@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sinharaja Forest Reserve - GoWild.lk</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            background-color: #f9f9f9;
+        }
+        
+        nav {
+            background-color: #026b42;
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        nav ul li {
+            margin: 0 15px;
+        }
+        
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1.1rem;
+            transition: 0.3s;
+        }
+        
+        nav ul li a:hover {
+            color: #ff9900;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        
+        .destination-header {
+            height: 500px;
+            background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('images/sinharaja.jpg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+        }
+        
+        .header-content {
+            z-index: 1;
+            max-width: 800px;
+            padding: 0 20px;
+        }
+        
+        .destination-header h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+        }
+        
+        .destination-header p {
+            font-size: 1.3rem;
+            margin-bottom: 30px;
+        }
+        
+        .destination-info {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 40px;
+            margin-top: 50px;
+        }
+        
+        .main-content {
+            line-height: 1.8;
+        }
+        
+        .main-content h2 {
+            color: #026b42;
+            margin-top: 40px;
+            margin-bottom: 20px;
+        }
+        
+        .main-content p {
+            margin-bottom: 20px;
+        }
+        
+        .sidebar {
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            height: fit-content;
+        }
+        
+        .info-box {
+            margin-bottom: 30px;
+        }
+        
+        .info-box h3 {
+            color: #026b42;
+            margin-top: 0;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .info-item {
+            margin-bottom: 15px;
+        }
+        
+        .info-item strong {
+            display: block;
+            margin-bottom: 5px;
+            color: #555;
+        }
+        
+        .wildlife-list {
+            padding-left: 20px;
+            margin-bottom: 0;
+        }
+        
+        .gallery {
+            margin-top: 60px;
+        }
+        
+        .gallery h2 {
+            color: #026b42;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+        }
+        
+        .gallery-image {
+            height: 200px;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        .gallery-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s;
+        }
+        
+        .gallery-image:hover img {
+            transform: scale(1.1);
+        }
+        
+        .safari-options {
+            margin-top: 60px;
+        }
+        
+        .safari-options h2 {
+            color: #026b42;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .safari-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+        }
+        
+        .safari-card {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .safari-content {
+            padding: 25px;
+        }
+        
+        .safari-content h3 {
+            margin-top: 0;
+            color: #026b42;
+        }
+        
+        .price {
+            font-weight: bold;
+            font-size: 1.2rem;
+            color: #ff9900;
+            margin: 15px 0;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: #ff9900;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: background-color 0.3s;
+        }
+        
+        .btn:hover {
+            background-color: #e68a00;
+        }
+        
+        .back-link {
+            display: inline-block;
+            margin-top: 60px;
+            color: #026b42;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        
+        .back-link:hover {
+            text-decoration: underline;
+        }
+        
+        footer {
+            background-color: #222;
+            color: white;
+            padding: 60px 0 20px;
+            text-align: center;
+            margin-top: 80px;
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .copyright {
+            padding-top: 20px;
+            color: #888;
+        }
+        
+        @media (max-width: 768px) {
+            .destination-header h1 {
+                font-size: 2.5rem;
+            }
+            
+            .destination-info {
+                grid-template-columns: 1fr;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            nav ul li {
+                margin: 5px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="gowild.lk.html#destinations">Destinations</a></li>
+            <li><a href="gowild.lk.html#activities">Activities</a></li>
+            <li><a href="gowild.lk.html">Wildlife</a></li>
+            <li><a href="gowild.lk.html">Tour Packages</a></li>
+            <li><a href="gowild.lk.html">Travel Planning</a></li>
+        </ul>
+    </nav>
+
+    <div class="destination-header">
+        <div class="header-content">
+            <h1>Sinharaja Forest Reserve</h1>
+            <p>Explore Sri Lanka's pristine rainforest - A UNESCO World Heritage Site teeming with endemic species</p>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="destination-info">
+            <div class="main-content">
+                <h2>About Sinharaja Forest Reserve</h2>
+                <p>Sinharaja Forest Reserve, a UNESCO World Heritage Site and Biosphere Reserve, is the last viable area of primary tropical rainforest in Sri Lanka. Spanning approximately 11,000 hectares, this biodiversity hotspot is situated in the southwest lowland wet zone of Sri Lanka across Sabaragamuwa and Southern provinces.</p>
+                
+                <p>The name "Sinharaja" means Lion Kingdom, reflecting ancient Sri Lankan legends. This dense forest canopy reaches up to 45 meters in places and is characterized by an extraordinarily high degree of endemism, making it a paradise for biologists, researchers, and nature enthusiasts alike.</p>
+                
+                <h2>Flora and Fauna</h2>
+                <p>Sinharaja is a living laboratory of evolution with remarkable biodiversity. The reserve harbors over 60% of Sri Lanka's endemic trees and woody plants, and nearly 50% of the country's endemic wildlife. Some of the notable species found here include:</p>
+                <ul class="wildlife-list">
+                    <li>Purple-faced Langur</li>
+                    <li>Sri Lankan Blue Magpie</li>
+                    <li>Red-faced Malkoha</li>
+                    <li>Green Pit Viper</li>
+                    <li>Sri Lankan Junglefowl</li>
+                    <li>Numerous butterfly species</li>
+                    <li>Endemic tree species like Shorea gardneri and Mesua ferrea</li>
+                </ul>
+                
+                <h2>Trekking Experience</h2>
+                <p>The best way to experience Sinharaja is through guided treks on its well-marked trails. Knowledgeable local guides can help you spot camouflaged wildlife and identify rare plant species that might otherwise go unnoticed. The forest is particularly magical in the early morning when many bird species are active and mist hangs between the trees.</p>
+            </div>
+            
+            <div class="sidebar">
+                <div class="info-box">
+                    <h3>Reserve Details</h3>
+                    <div class="info-item">
+                        <strong>Location:</strong>
+                        Southwest Sri Lanka, between Southern and Sabaragamuwa Provinces
+                    </div>
+                    <div class="info-item">
+                        <strong>Best Time to Visit:</strong>
+                        January to April, August to September
+                    </div>
+                    <div class="info-item">
+                        <strong>Nearest Towns:</strong>
+                        Deniyaya, Rakwana, and Kalawana
+                    </div>
+                    <div class="info-item">
+                        <strong>Reserve Area:</strong>
+                        11,187 hectares
+                    </div>
+                </div>
+                
+                <div class="info-box">
+                    <h3>Quick Tips</h3>
+                    <div class="info-item">
+                        <strong>What to Bring:</strong>
+                        Leech socks, raincoat, binoculars, camera, water
+                    </div>
+                    <div class="info-item">
+                        <strong>Recommended Clothing:</strong>
+                        Light, quick-dry clothing, hiking shoes
+                    </div>
+                    <div class="info-item">
+                        <strong>Important Note:</strong>
+                        Guide is mandatory for forest entry
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="gallery">
+            <h2>Sinharaja Photo Gallery</h2>
+            <div class="gallery-grid">
+                <div class="gallery-image">
+                    <img src="images/sinharaja-bluejay.jpg" alt="Sri Lankan Blue Magpie">
+                </div>
+                <div class="gallery-image">
+                    <img src="images/sinharaja-waterfall.jpg" alt="Waterfall in Sinharaja">
+                </div>
+                <div class="gallery-image">
+                    <img src="images/sinharaja-canopy.jpg" alt="Forest Canopy">
+                </div>
+                <div class="gallery-image">
+                    <img src="images/sinharaja-langur.jpg" alt="Purple-faced Langur">
+                </div>
+            </div>
+        </div>
+
+        <div class="safari-options">
+            <h2>Trekking Package Options</h2>
+            <div class="safari-grid">
+                <div class="safari-card">
+                    <div class="safari-content">
+                        <h3>Half-Day Trek</h3>
+                        <p>A 3-hour guided trek exploring the main trails and biodiversity of Sinharaja.</p>
+                        <div class="price">From $40 per person</div>
+                        <a href="#" class="btn">Book Now</a>
+                    </div>
+                </div>
+                <div class="safari-card">
+                    <div class="safari-content">
+                        <h3>Full-Day Trek</h3>
+                        <p>Comprehensive 7-hour trek covering multiple trails with picnic lunch included.</p>
+                        <div class="price">From $75 per person</div>
+                        <a href="#" class="btn">Book Now</a>
+                    </div>
+                </div>
+                <div class="safari-card">
+                    <div class="safari-content">
+                        <h3>Bird Watching Special</h3>
+                        <p>Specialized trek for bird enthusiasts with expert ornithological guides.</p>
+                        <div class="price">From $90 per person</div>
+                        <a href="#" class="btn">Book Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <a href="gowild.lk.html" class="back-link">← Back to All Destinations</a>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <p>© 2024 GoWild.lk - Your Ultimate Wildlife & Nature Travel Companion</p>
+            <p>Experience the Wild, Preserve the Nature</p>
+            <div class="copyright">
+                All Rights Reserved | Designed with ❤️ in Sri Lanka
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
